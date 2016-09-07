@@ -1,0 +1,33 @@
+Island Id - 1; Num of Connxns - 2; FinishPoint - 0. Connxn Ids are : 1 4 
+Island Id - 2; Num of Connxns - 3; FinishPoint - 0. Connxn Ids are : 1 2 3 
+Island Id - 3; Num of Connxns - 3; FinishPoint - 0. Connxn Ids are : 2 9 19 
+Island Id - 4; Num of Connxns - 4; FinishPoint - 0. Connxn Ids are : 3 7 8 19 
+Island Id - 5; Num of Connxns - 2; FinishPoint - 0. Connxn Ids are : 4 5 
+Island Id - 6; Num of Connxns - 2; FinishPoint - 0. Connxn Ids are : 5 6 
+Island Id - 7; Num of Connxns - 3; FinishPoint - 0. Connxn Ids are : 6 7 10 
+Island Id - 8; Num of Connxns - 4; FinishPoint - 0. Connxn Ids are : 8 9 11 12 
+Island Id - 9; Num of Connxns - 2; FinishPoint - 0. Connxn Ids are : 11 18 
+Island Id - 10; Num of Connxns - 3; FinishPoint - 0. Connxn Ids are : 16 17 18 
+Island Id - 11; Num of Connxns - 3; FinishPoint - 0. Connxn Ids are : 12 13 15 
+Island Id - 12; Num of Connxns - 3; FinishPoint - 1. Connxn Ids are : 10 13 14 
+Island Id - 13; Num of Connxns - 3; FinishPoint - 0. Connxn Ids are : 14 15 16 
+Island Id - 14; Num of Connxns - 1; FinishPoint - 0. Connxn Ids are : 17 
+Connxn Id - 1; Num of Islands - 2. Island Ids are : 1 2 
+Connxn Id - 2; Num of Islands - 2. Island Ids are : 2 3 
+Connxn Id - 3; Num of Islands - 2. Island Ids are : 2 4 
+Connxn Id - 4; Num of Islands - 2. Island Ids are : 1 5 
+Connxn Id - 5; Num of Islands - 2. Island Ids are : 5 6 
+Connxn Id - 6; Num of Islands - 2. Island Ids are : 6 7 
+Connxn Id - 7; Num of Islands - 2. Island Ids are : 4 7 
+Connxn Id - 8; Num of Islands - 2. Island Ids are : 4 8 
+Connxn Id - 9; Num of Islands - 2. Island Ids are : 3 8 
+Connxn Id - 10; Num of Islands - 2. Island Ids are : 7 12 
+Connxn Id - 11; Num of Islands - 2. Island Ids are : 8 9 
+Connxn Id - 12; Num of Islands - 2. Island Ids are : 8 11 
+Connxn Id - 13; Num of Islands - 2. Island Ids are : 11 12 
+Connxn Id - 14; Num of Islands - 2. Island Ids are : 12 13 
+Connxn Id - 15; Num of Islands - 2. Island Ids are : 11 13 
+Connxn Id - 16; Num of Islands - 2. Island Ids are : 10 13 
+Connxn Id - 17; Num of Islands - 2. Island Ids are : 10 14 
+Connxn Id - 18; Num of Islands - 2. Island Ids are : 9 10 
+Connxn Id - 19; Num of Islands - 2. Island Ids are : 3 4 
