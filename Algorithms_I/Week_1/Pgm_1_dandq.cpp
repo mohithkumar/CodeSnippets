@@ -18,34 +18,34 @@ uint32_t merge(IntegerArray&       arr,
                const IntegerArray& right)
 {
     uint32_t count(0);
-    size_t leftIdx(0);
-    size_t rightIdx(0);
+    size_t i(0);
+    size_t j(0);
     size_t leftSz(left.size());
     size_t rightSz(right.size());
 
-    while ( (leftIdx < leftSz) || (rightIdx < rightSz) )
+    while ( (i < leftSz) || (j < rightSz) )
     {
-        if (leftIdx == leftSz)
+        if (i == leftSz)
         {
-            arr[leftIdx + rightIdx] = right[rightIdx];
-            ++rightIdx;
+            arr[i + j] = right[j];
+            ++j;
         }
-        else if (rightIdx == rightSz)
+        else if (j == rightSz)
         {
-            arr[leftIdx + rightIdx] = left[leftIdx];
-            ++leftIdx;
+            arr[i + j] = left[i];
+            ++i;
         }
-        else if (left[leftIdx] <= right[rightIdx])
+        else if (left[i] <= right[j])
         {
-            arr[leftIdx + rightIdx] = left[leftIdx];
-            ++leftIdx;
+            arr[i + j] = left[i];
+            ++i;
         }
         else
         {
-            // cout << left[leftIdx] << " : " << right[rightIdx] << endl;
-            arr[leftIdx + rightIdx] = right[rightIdx];
-            ++rightIdx;
-            count += leftSz - leftIdx;
+            // cout << left[i] << " : " << right[j] << endl;
+            arr[i + j] = right[j];
+            ++j;
+            count += leftSz - i;
         }
     }
    
