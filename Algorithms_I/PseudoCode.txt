@@ -1,0 +1,14 @@
+C = Output array [length = n]
+A = 1st sorted array [n/2]
+B = 2nd sorted array [n/2]
+i = 1; j = 1
+
+for k = 1 to n
+  if A[i] < B[j]
+    C[k] = A[i]
+    i++
+  elif B[j] < A[i]
+    C[k] = B[j]
+    j++
+end
+  
