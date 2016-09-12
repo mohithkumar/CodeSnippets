@@ -42,7 +42,11 @@ int main()
         {
             uint32_t number;
             inFile >> number;
-            // cout << number << endl;
+            if (inFile.eof())
+            {
+                break;
+            }
+            cout << number << endl;
             numVect[idx++] = number;
         }
         inFile.close();

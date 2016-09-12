@@ -84,6 +84,10 @@ int main()
         {
             uint32_t number;
             inFile >> number;
+            if (inFile.eof())
+            {
+                break;
+            }
             // cout << number << endl;
             numVect[idx++] = number;
         }
