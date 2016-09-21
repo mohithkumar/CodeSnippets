@@ -1,0 +1,27 @@
+Binary Search Tree with Iterator
+Program description:
+The program has 2 files viz., BinarySearchTree_WithIterator.h and BinarySearchTree_WithIterator.cpp.
+
+In the program below, each node of the Binary Search Tree (BST) has 4 fields:
+1. Data (which is of type int; this could be templatized!!)
+2. Pointer to left child
+3. Pointer to right child
+4. Pointer to parent (this is needed for iterator implementation).
+
+Operations supported by this BST are:
+- Insertion
+- Removal
+- Inorder Traversal (using Iteration)
+- Pre-order Traversal (using Recursion)
+- Post-order Traversal (using Recursion)
+- Smallest Element (using Iteration)
+- Largest Element (using Recursion)
+- Kth Smallest Element (using Iteration)
+- Kth Largest Element (using Recursion)
+- Depth of the tree (using Recursion)
+
+Also, there is a non-const input iterator provided that could be used just like STL Iterator.
+- The iterator can be initialized by first() or last() operations of BST.
+- The iterator can be copied and copy-constructed.
+- The following expressions are supported: ++it, it1 == it2, it1 != it2, *it, it->value,
+
