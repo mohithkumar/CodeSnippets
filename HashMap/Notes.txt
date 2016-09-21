@@ -1,0 +1,18 @@
+Word Frequency calculator using HashMap
+Program description:
+The working of this program can be divided into 2 broad things:
+A) Building HashTable
+1. Requests user for a filename
+2. Determines whether the given file is ASCII text file
+3. If not ASCII text file, prints a message and exits
+4. (If ASCII text file), It parses the file, reads every word and builds HashTable.
+5. HashTable is basically an array of pointers to HashNodePtr.
+6. Each element of the array, in turn points to a HashNode that has the same HashValue.
+7. Each HashNode contains a word, its count and pointer to the next node.
+8. For every word read from the file, its HashValue is calculated and is inserted into the HashTable adjacent to corresponding array element having same HashValue.
+9. If the word already exists in HashTable, its count in the respective node is incremented else a new HashNode is created.
+
+B) Counting the frequency of occurrence of words and retrieving the 'K' most common words.
+1. A Binary Search Tree is constructed from each of the nodes in HashTable.
+2. First 'N' number of words in the descending order of their frequencies are printed out.
+
