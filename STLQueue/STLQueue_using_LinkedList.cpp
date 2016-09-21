@@ -11,6 +11,7 @@ struct QueueNode
     ~QueueNode() { next = NULL; }
 };
 
+
 // Elements are inserted to the back of the Q and removed from the front
 // Front (Pop) -- -- -- -- -- -- Back (Push)
 // Upon insertion, Front remains fixed while Back gets incremented
@@ -35,10 +36,12 @@ class Queue
     size_t sSize;
 };
 
+
 template<class T>
 Queue<T>::Queue() : frontEl(NULL), backEl(NULL), sSize(0)
 {
 }
+
 
 template<class T>
 Queue<T>::~Queue()
@@ -52,6 +55,7 @@ Queue<T>::~Queue()
     sSize = 0;
 }
 
+
 template<class T>
 void Queue<T>::push(T& e)
 {
@@ -63,6 +67,7 @@ void Queue<T>::push(T& e)
     backEl = p;
     ++sSize;
 }
+
 
 template<class T>
 void Queue<T>::pop()
@@ -76,6 +81,7 @@ void Queue<T>::pop()
     }
 }
 
+
 template<class T>
 T& Queue<T>::front()
 {
@@ -85,6 +91,7 @@ T& Queue<T>::front()
         return p->data;
     }
 }
+
 
 template<class T>
 T& Queue<T>::back()
@@ -96,17 +103,17 @@ T& Queue<T>::back()
     }
 }
 
+
 template<class T>
 bool Queue<T>::empty() const
 {
     return ((frontEl == NULL) || (backEl == NULL));
 }
 
+
 template<class T>
 size_t Queue<T>::size() const
 {
     return sSize;
 }
-
-// Posted 12th March 2013 by Mohith Suryanarayan
 
