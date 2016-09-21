@@ -10,14 +10,16 @@ extern "C"
 #include <sys/syscall.h>
 }
 
+using namespace std;
+
+
 namespace
 {
-const char MQ_NAME[] = "/MQ_Posix";
-const long MQ_MESSAGE_MAX_LENGTH = 64; // In bytes
-const long MQ_MAX_NUM_OF_MESSAGES = 10;
+    const char MQ_NAME[] = "/MQ_Posix";
+    const long MQ_MESSAGE_MAX_LENGTH = 64; // In bytes
+    const long MQ_MAX_NUM_OF_MESSAGES = 10;
 };
 
-using namespace std;
 
 class MQ_Recvr : private boost::noncopyable
 {
@@ -34,6 +36,7 @@ class MQ_Recvr : private boost::noncopyable
 
     mqd_t m_mqDesc;
 };
+
 
 MQ_Recvr::MQ_Recvr() : m_mqDesc(-1)
 {
@@ -59,10 +62,12 @@ MQ_Recvr::MQ_Recvr() : m_mqDesc(-1)
     }
 }
 
+
 MQ_Recvr::~MQ_Recvr()
 {
     closeMsgQ();
 }
+
 
 void MQ_Recvr::subscribeNotifications()
 {
@@ -96,11 +101,13 @@ void MQ_Recvr::subscribeNotifications()
     cin >> c;
 }
 
+
 void MQ_Recvr::recvMsgAndSubscribeWrapper(/*union*/ sigval sv)
 {
     // This gets executed in a different thread every time it gets called
     ((MQ_Recvr *)sv.sival_ptr)->recvMsgAndSubscribe();
 }
+
 
 void MQ_Recvr::recvMsgAndSubscribe()
 {
@@ -131,10 +138,12 @@ void MQ_Recvr::recvMsgAndSubscribe()
     }
 }
 
+
 void MQ_Recvr::processMessage(const char* buffer)
 {
     printf("Message : [%s]\n", buffer);
 }
+
 
 void MQ_Recvr::closeMsgQ()
 {
@@ -149,6 +158,7 @@ void MQ_Recvr::closeMsgQ()
         printf("Message Queue [desc : %d] unlinked\n", m_mqDesc);
 }
 
+
 int main()
 {
     printf("Main Thread Id : %u\n",  syscall(SYS_gettid) );
@@ -156,6 +166,4 @@ int main()
     mqRecvr.subscribeNotifications();
     return 0;
 }
-
-// Posted 11th August 2014 by Mohith Suryanarayan
 
