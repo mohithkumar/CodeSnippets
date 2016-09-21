@@ -1,0 +1,15 @@
+Depth First Search for Graphs
+Premise for the program:
+- A graph consists of a number of nodes and edges.
+- An edge is made up of 2 nodes.
+
+This program provides the following:
+- Ability to add an edge (pair of nodes) to the graph
+- Remove an edge from the graph
+- Determine whether the graph is connected or not
+- Iterative Depth First Search (DFS), using STL Stack, of the entire graph
+- Iterative Depth First Search (DFS), using STL Stack, between any 2 given nodes.
+- Return the number of nodes in the graph
+
+The program basically builds an AdjacenyList from the input nodes and uses this AdjList for iterating through the graph.
+
