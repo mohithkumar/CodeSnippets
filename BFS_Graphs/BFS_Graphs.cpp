@@ -1,65 +1,8 @@
-/**
-Breadth First Search for Graphs
-Premise for the program:
-- A graph consists of a number of nodes and edges.
-- An edge is made up of 2 nodes.
-
-This program provides the following:
-- Ability to add an edge (pair of nodes) to the graph
-- Remove an edge from the graph
-- Determine whether the graph is connected or not
-- Iterative Breadth First Search (BFS), using STL Queue, of the entire graph
-- Iterative Breadth First Search (BFS), using STL Queue, between any 2 given nodes.
-- Return the number of nodes in the graph
-
-The program basically builds an AdjacenyList from the input nodes and uses this AdjList for iterating through the graph.
-*/
-
-// File:
-
+#include "BFS_Graphs.h"
 #include <iostream>
 #include <queue>
 
 using namespace std;
-
-namespace
-{
-    const int END(-99999);
-};
-
-typedef unsigned int uint;
-typedef struct Node* NodePtr;
-struct Node
-{
-    int info;
-    bool visited;
-    Node* next;
-
-  public:
-    Node() : info(0), visited(false), next(NULL) {}
-    Node(int i) : info(i), visited(false), next(NULL) {}
-
-    ~Node() { info = 0; visited = false; next = NULL; }
-};
-
-class Graph
-{
-  public:
-    Graph(uint size = 2);
-    ~Graph();
-    bool isGraphConnected();
-    bool addEdge(int x, int y);
-    bool removeEdge(int x, int y);
-    void breadthFirstSearch(int start, int end);
-    uint getNumberOfNodes() const { return currSize; }
-
-   private:
-    uint iterativeBreadthFirstSearch(int start, int end);
-
-    uint maxSize; // Max Number of Nodes 
-    uint currSize; // Curr Number of Nodes
-    NodePtr* adjList; // This data type should be the same as info
-};
 
 Graph::Graph(uint size) : currSize(0)
 {
@@ -73,6 +16,7 @@ Graph::Graph(uint size) : currSize(0)
     for (uint i = 0; i < maxSize; ++i)
         adjList[i] = NULL;
 }
+
 
 Graph::~Graph()
 {
@@ -88,6 +32,7 @@ Graph::~Graph()
     }
     delete [] adjList;
 }
+
 
 bool Graph::isGraphConnected()
 {
@@ -112,6 +57,7 @@ bool Graph::isGraphConnected()
 
     return checkConn;
 }
+
 
 // Returns false if the given edge is already present 
 bool Graph::addEdge(int x, int y)
@@ -195,6 +141,7 @@ bool Graph::addEdge(int x, int y)
 
     return addResult;
 }
+
 
 // Returns false if the given edge is cannot be found 
 bool Graph::removeEdge(int x, int y)
@@ -291,12 +238,14 @@ bool Graph::removeEdge(int x, int y)
     return remResult;
 }
 
+
 void Graph::breadthFirstSearch(int start, int end)
 {
     cout << "Breadth first Search starting from vertex " << start << endl;
     uint numOfNodes = iterativeBreadthFirstSearch(start, end);
     cout << "Number of nodes visited is " << numOfNodes << endl;
 }
+
 
 uint Graph::iterativeBreadthFirstSearch(int start, int end)
 {
@@ -344,7 +293,7 @@ uint Graph::iterativeBreadthFirstSearch(int start, int end)
     bool found(false);
     while (!q.empty() && (found == false))
     {
-        NodePtr temp = q.top();
+        NodePtr temp = q.front();
         q.pop();
 
         if (temp->info == endNode.info)
@@ -399,25 +348,6 @@ uint Graph::iterativeBreadthFirstSearch(int start, int end)
     }
     cout << endl;
 
-     return numberOfVisitedNodes;
+    return numberOfVisitedNodes;
 }
-
- int main()
-{
-    Graph g(20);
-    g.addEdge(1, 2); g.addEdge(1, 3); g.addEdge(1, 4);
-    g.addEdge(2, 5); g.addEdge(2, 6); g.addEdge(2, 9);
-    g.addEdge(4, 7); g.addEdge(4, 8); g.addEdge(4, 9);
-    g.addEdge(10,11);
-    // cout << "Number of nodes : " << g.getNumberOfNodes() << endl;
-    g.depthFirstSearch(1, 9);
-
-    // cout << "(Graph Connected ? 0 = False : 1 = True) ==> " << g.isGraphConnected() << endl;
-
-    g.removeEdge(1, 2);
-    return 0;
-}
-
-// Feedback and suggestions welcome.
-// Posted 13th March 2013 by Mohith Suryanarayan
 

@@ -12,6 +12,7 @@ struct StackNode
     ~StackNode() { next = NULL; }
 };
 
+
 template<class T>
 class Stack
 {
@@ -29,10 +30,12 @@ class Stack
     size_t sSize;
 };
 
+
 template<class T>
 Stack<T>::Stack() : topEle(NULL), sSize(0)
 {
 }
+
 
 template<class T>
 Stack<T>::~Stack()
@@ -46,6 +49,7 @@ Stack<T>::~Stack()
     sSize = 0;
 }
 
+
 template<class T>
 void Stack<T>::push(T& e)
 {
@@ -57,6 +61,7 @@ void Stack<T>::push(T& e)
     topEle = p;
     ++sSize;
 }
+
 
 template<class T>
 void Stack<T>::pop()
@@ -70,6 +75,7 @@ void Stack<T>::pop()
     }
 }
 
+
 template<class T>
 T& Stack<T>::top()
 {
@@ -80,18 +86,17 @@ T& Stack<T>::top()
     }
 }
 
+
 template<class T>
 bool Stack<T>::empty()
 {
     return (topEle == NULL);
 }
 
+
 template<class T>
 size_t Stack<T>::size() const
 {
     return sSize;
 }
-
-// Feedback and suggestions welcome.
-// Posted 12th March 2013 by Mohith Suryanarayan
 
