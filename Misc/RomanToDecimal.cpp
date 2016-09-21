@@ -28,5 +28,3 @@ int main()
     cout << "MDCLXVI" << ": " << RomanToDecimal("MDCLXVI") << endl;
 }
 
-// Posted 10th October 2013 by Mohith Suryanarayan
-
